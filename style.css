@@ -16,7 +16,7 @@ body {
     font-style: normal;
     border-bottom: solid;    
     border-bottom-width: 2px;
-    font-size: medium;
+    font-size: 3vh;
 }
 
 .bookAuthor , .bookTitle{
@@ -25,7 +25,7 @@ body {
 }
 
 .card{
-    border: solid;
+    background-color: rgb(252, 247, 200);
     height: 45vh;
     width: 35vh;
     text-align: left;
@@ -40,7 +40,6 @@ body {
     border-bottom: solid;    
     border-bottom-width: 2px;
     height: 3vh;
-
     position: relative;
 }
 
@@ -51,7 +50,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     height: 190%;
-    width: 2px; /* Adjust width as needed */
+    width: 2px; 
     background-color: black;
   }
 
@@ -62,10 +61,24 @@ body {
 }
 
 
-
-
 .libraryCard{
     text-align: center;
     font-size: 3vh;
     border-bottom: solid;    
+}
+
+.pgsRead{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    border-bottom: solid;    
+    border-bottom-width: 1px;   
+    height: 5vh;
+}
+
+.pgsRead > h3{
+    font-size: 3vh;
+    font-weight: 300;
+    margin: 1vh 0;
 }

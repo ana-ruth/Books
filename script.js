@@ -61,22 +61,27 @@ function displayBooks()
         card.appendChild(headings);
 
 
+        const pgsRead = document.createElement("div");
+        pgsRead.classList.add("pgsRead");
+
         const bookPages = document.createElement("h3");
         bookPages.classList.add("bookPages");
         bookPages.textContent = myLibrary[i].pages;
-        card.appendChild(bookPages);
+        pgsRead.appendChild(bookPages);
 
-        const hasReadBook = document.createElement("h4");
+        const hasReadBook = document.createElement("h3");
         hasReadBook.classList.add("hasReadBook");
         hasReadBook.textContent = myLibrary[i].read;
-        card.appendChild(hasReadBook);
+        pgsRead.appendChild(hasReadBook);
+
+        card.appendChild(pgsRead);
 
         library.appendChild(card);
     }
 }
 
-const firstBook = new Book("Jane Eyre","Charlotte Bronte","189 pages","Yes")
-const secondBook = new Book("Emma","Jane Austen","215 pages","Yes")
+const firstBook = new Book("Jane Eyre","Charlotte Bronte","189 pgs","Yes")
+const secondBook = new Book("Emma","Jane Austen","215 pgs","Yes")
 
 
 myLibrary.push(firstBook)
