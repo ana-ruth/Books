@@ -12,19 +12,55 @@
 
 </head>
 <body>
-    
+    <script src="script.js" defer></script>
 
-    
-        <script src="script.js" defer></script>
-        <!--
-        <input type="text" placeholder="Book">
-        <input type="text" placeholder="Author">
-        <input type="text" placeholder="Pages">
-        Read? <input type="checkbox">    
-    -->
+    <div>
+        <!-- A modal dialog containing a form -->
+        <dialog id="favDialog">
+            <form>
+            <p>
+                <label> Book Title:
+                <input type="text" id="Book">
+                </label>
+            </p>
+
+            <p>
+                <label> Author:
+                <input type="text" id="Author">
+                </label>
+            </p>
+
+            <p>
+                <label> Total Pages:
+                <input type="number" id="Pages">
+                </label>
+            </p>
+
+            <p>
+                <label>Have your read it? 
+                    <select id="Read">
+                        <option value="default">Choose...</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </label>
+            </p>
+        
+            <div>
+                <button value="cancel" formmethod="dialog">CANCEL</button>
+                <button id="confirmBtn" value="default">ADD BOOK</button>
+            </div>
+            </form>
+        </dialog>
+        <p>
+            <button id="showDialog" >NEW BOOK</button>
+        </p>
+        <output></output>
+  
+    </div>
+
+
     <div id="library"></div>
-
-
 
 </body>
 </html>

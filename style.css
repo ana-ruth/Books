@@ -3,12 +3,20 @@ html {
 }
 body {
     min-height: 100%;
+
+    
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    
+    
 }
 
 #library{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    gap: 5vh;
 }
 
 .card h2{
@@ -81,4 +89,30 @@ body {
     font-size: 3vh;
     font-weight: 300;
     margin: 1vh 0;
+}
+
+
+#showDialog{
+    background-color: black;
+    height: 10vh;
+    width: 25vh;
+    color: bisque;
+    border-style: solid;
+    border-radius: 3vh;
+    font-family: "Fira Sans",'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    font-size: large;
+}
+
+.card > button
+{
+    background-color: black;
+    color: bisque;
+    border-style: solid;
+    border-radius: 3vh;
+    font-family: "Fira Sans",'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: small;
+    margin: 1vh 0 0 1vh;
+
 }
