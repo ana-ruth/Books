@@ -12,6 +12,18 @@ function Book(title,author,pages,read)
     {
         return ""+title+" by "+author+", "+pages+", "+read;
     };
+
+    //////
+    this.changeReadStatus = function()
+    {
+        if(this.read === "Yes")
+        {
+            this.read = "No";
+        }
+        else{
+            this.read = "Yes";
+        }
+    };
 }
 
 
@@ -91,21 +103,30 @@ function displayBooks(initialPosition,length)
 
         card.appendChild(pgsRead);
 
+        //button to remove book from display
         const deleteBook = document.createElement("button");
         deleteBook.textContent = "REMOVE";
         deleteBook.dataset.index = i;
 
-////////////////////
+        //remove book from display and myLibrary array when button is clicked
         deleteBook.addEventListener("click", () => {
-           // myLibrary.splice(deleteBook.dataset.index,1);
            delete myLibrary[deleteBook.dataset.index];
-            deleteBook.parentElement.remove();
-         
-          //  displayBooks(0,myLibrary.length);   
+            deleteBook.parentElement.remove();   
         });
-//////////////////////
 
         card.appendChild(deleteBook);
+
+
+        const readStatus = document.createElement("button");
+        readStatus.textContent = "READ STATUS";
+        card.appendChild(readStatus);
+
+        //change read status from Book object and display when readStatus button is clicked
+        readStatus.addEventListener('click',()=>{
+            myLibrary[i].changeReadStatus();
+            hasReadBook.textContent = myLibrary[i].read;
+        })
+
 
         library.appendChild(card);
     }
@@ -142,6 +163,12 @@ showButton.addEventListener("click", () => {
 
 // "Cancel" button closes the dialog without submitting because of [formmethod="dialog"], triggering a close event.
 favDialog.addEventListener("close", (e) => {
+    
+    //if no book is added when form is opened, then don't do anything and return function
+    if(favDialog.returnValue === "default" || favDialog.returnValue === "cancel"){
+        return;
+    }
+
   newBook = favDialog.returnValue;
   createBook(newBook);
   displayBooks(myLibrary.length-1,myLibrary.length); //display the new book only
@@ -150,7 +177,7 @@ favDialog.addEventListener("close", (e) => {
 // Prevent the "confirm" button from the default behavior of submitting the form, and close the dialog with the `close()` method, which triggers the "close" event.
 confirmBtn.addEventListener("click", (event) => {
   event.preventDefault(); //prevent from submitting form
-  favDialog.close(userTitle.value+","+userAuthor.value+","+userPages.value+","+userRead.value);
+  favDialog.close(userTitle.value+","+userAuthor.value+","+userPages.value+","+userRead.value); //get book details
 });
 
 
