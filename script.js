@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 
 function Book(title,author,pages,read)
@@ -22,7 +22,7 @@ function createBook(inputBook){
     const pages = values[2];
     const read = values[3]
 
-    const newBook = new Book(title,author,pages,read)
+    const newBook = new Book(title,author,pages,read,myLibrary.length)    
     addBookToLibrary(newBook);
 }
 
@@ -32,10 +32,11 @@ function addBookToLibrary(Book) {
 }
 
 const library = document.querySelector("#library");
-let deleteBook;
+
 
 function displayBooks(initialPosition,length)
 {
+
     for (let i=initialPosition; i<length;i++)
     {
 
@@ -90,19 +91,31 @@ function displayBooks(initialPosition,length)
 
         card.appendChild(pgsRead);
 
-        deleteBook = document.createElement("button");
+        const deleteBook = document.createElement("button");
         deleteBook.textContent = "REMOVE";
+        deleteBook.dataset.index = i;
+
+////////////////////
+        deleteBook.addEventListener("click", () => {
+           // myLibrary.splice(deleteBook.dataset.index,1);
+           delete myLibrary[deleteBook.dataset.index];
+            deleteBook.parentElement.remove();
+         
+          //  displayBooks(0,myLibrary.length);   
+        });
+//////////////////////
+
         card.appendChild(deleteBook);
 
         library.appendChild(card);
     }
 }
 
-const firstBook = new Book("Jane Eyre","Charlotte Bronte","189","Yes")
-const secondBook = new Book("Emma","Jane Austen","215","Yes")
+const firstBook = new Book("Jane Eyre","Charlotte Bronte","189","Yes");
+const secondBook = new Book("Emma","Jane Austen","215","Yes");
 
 
-myLibrary.push(firstBook)
+myLibrary.push(firstBook);
 myLibrary.push(secondBook);
 
 
@@ -140,8 +153,6 @@ confirmBtn.addEventListener("click", (event) => {
   favDialog.close(userTitle.value+","+userAuthor.value+","+userPages.value+","+userRead.value);
 });
 
-/*
-deleteBook.addEventListener('click',function(){
-    delete myArray[]; 
-});
-*/
+
+
+
