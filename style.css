@@ -11,7 +11,7 @@ body {
 }
 
 
-h1{
+#libraryTitle{
     font-family:"Fira Sans",'Arial Narrow', Arial, sans-serif;
     font-weight: 900;
     font-size:8vh;
@@ -28,7 +28,7 @@ h1{
 }
 
 .card h2{
-    font-weight: 200;
+    font-weight: 400;
     font-style: normal;
     border-bottom: solid;    
     border-bottom-width: 2px;
@@ -95,7 +95,7 @@ h1{
 
 .pgsRead > h3{
     font-size: 3vh;
-    font-weight: 300;
+    font-weight: 400;
     margin: 1vh 0;
 }
 
@@ -123,4 +123,80 @@ h1{
     font-size: small;
     margin: 1.5vh 1vh 0 2.5vh;
 
+}
+
+/* ---- form ----*/
+form{
+    height: 65vh;
+    width: 40vh;
+    text-align: center;
+}
+
+form h1{
+    font-family:"Fira Sans",'Arial Narrow', Arial, sans-serif;
+    font-weight: 800;
+    font-size:5.5vh;
+    color:rgb(153, 182, 154);
+    margin: 0;
+}
+
+p{
+    display: flex;
+    justify-content: center;
+}
+
+input, select{
+    border: solid;
+    border-color: rgb(153, 182, 154);
+    border-radius: 4vh;
+    height: 3.5vh;
+    font-family: "Fira Sans",'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    color: rgb(43, 42, 35); 
+
+}
+
+input:focus{
+    border: solid;
+    outline: none;
+    border-color: rgb(86, 102, 87);
+}
+
+
+label{
+    font-family: "Fira Sans",'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    font-size: medium;  
+    color: rgb(43, 42, 35); 
+}
+
+select{
+    font-family: "Fira Sans",'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-size: small;
+    width: 27vh;
+    height: 5vh;
+}
+
+
+option:focus{
+    background-color: rgb(86, 102, 87);
+}
+
+
+div .buttonOptions{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form button{
+    background-color: rgb(43, 42, 35);
+    color: rgb(183, 216, 185);
+    border-style: none;
+    height: 6vh;
+    width: 13vh;
+    border-radius: 2vh;
+    font-family: "Fira Sans",'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: small;
 }

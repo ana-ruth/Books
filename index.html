@@ -14,33 +14,40 @@
 <body>
     <script src="script.js" defer></script>
 
-   <h1>My Library</h1>
+   <h1 id="libraryTitle">My Library</h1>
 
 
-    <div>
+    <div class="form">
         <!-- A modal dialog containing a form -->
         <dialog id="favDialog">
             <form>
+            
+            <h1>NEW BOOK</h1>
+
             <p>
-                <label> Book Title:
+                <label> Book Title
+                    <br>
                 <input type="text" id="Book">
                 </label>
             </p>
 
             <p>
-                <label> Author:
+                <label> Author
+                    <br>
                 <input type="text" id="Author">
                 </label>
             </p>
 
             <p>
-                <label> Total Pages:
+                <label> Total Pages
+                    <br>
                 <input type="number" id="Pages">
                 </label>
             </p>
 
             <p>
                 <label>Have your read it? 
+                    <br>
                     <select id="Read">
                         <option value="default">Choose...</option>
                         <option>Yes</option>
@@ -49,7 +56,7 @@
                 </label>
             </p>
         
-            <div>
+            <div class="buttonOptions">
                 <button value="cancel" formmethod="dialog">CANCEL</button>
                 <button id="confirmBtn" value="default">ADD BOOK</button>
             </div>
