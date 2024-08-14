@@ -132,12 +132,12 @@ function displayBooks(initialPosition,length)
     }
 }
 
-const firstBook = new Book("Jane Eyre","Charlotte Bronte","189","Yes");
-const secondBook = new Book("Emma","Jane Austen","215","Yes");
+//const firstBook = new Book("Jane Eyre","Charlotte Bronte","189","Yes");
+//const secondBook = new Book("Emma","Jane Austen","215","Yes");
 
 
-myLibrary.push(firstBook);
-myLibrary.push(secondBook);
+//myLibrary.push(firstBook);
+//myLibrary.push(secondBook);
 
 
 displayBooks(0,myLibrary.length); //initial display of books
